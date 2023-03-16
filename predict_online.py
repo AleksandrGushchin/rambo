@@ -2,7 +2,7 @@ import glob
 import numpy as np
 from collections import deque
 from keras.models import load_model
-from keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.utils import load_img, img_to_array
 from skimage.exposure import rescale_intensity
 
 class Model(object):
@@ -55,4 +55,4 @@ if __name__ == "__main__":
     model = Model("checkpoints/final_model.hdf5", "data/X_train_mean.npy")
     
     for f in filenames:
-        print model.predict(f)
+        print(model.predict(f))
